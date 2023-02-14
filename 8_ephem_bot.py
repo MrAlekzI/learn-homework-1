@@ -38,10 +38,10 @@ def greet_user(update, context):
     print(text)
     update.message.reply_text(text)
 
-# для нижеописанной функции если через date.today() то формат вывода YYYY-MM-DD, но как его отворматировать простым стопосбом\
-# , без перетасовки вызваных атрибутов в f-string или без перегрупировке в regex
+# для нижеописанной функции если через date.today() то форматирование значения по умолчанию не работает в боте\
+# , решил не связываться с престановкой вызваных атрибутов в f-string при return
 
-def constellation (planet, user_date=date.today()):
+def constellation (planet, user_date='{:%d/%m/%Y}'.format(date.today())):
     try:
         planet_time = eval(f'ephem.{planet.capitalize()}("{user_date}")')
         #planet_time = onvertion = exec(f'ephem.{planet}("{date}")') #это почему то не работает
