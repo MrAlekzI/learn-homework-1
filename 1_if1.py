@@ -19,7 +19,17 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    def activity (age):
+      if age < 7:
+        return 'kindergarten'
+      elif age >= 7 and age < 18:
+        return 'school'
+      elif age >=18 and age <24:
+        return 'university'
+      else:
+        return 'work'
 
+    age = int(input('Enter you age: '))
+    print (f'You should go to {activity(age)}')
 if __name__ == "__main__":
     main()
